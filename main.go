@@ -55,6 +55,7 @@ var (
 		"tcp":  prober.ProbeTCP,
 		"icmp": prober.ProbeICMP,
 		"dns":  prober.ProbeDNS,
+		"taulia":  prober.ProbeTaulia,
 	}
 )
 

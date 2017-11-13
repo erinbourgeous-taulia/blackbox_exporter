@@ -32,3 +32,27 @@ modules:
       - expect: "^:[^ ]+ 001"
   icmp:
     prober: icmp
+  http_healthcheck:
+    prober: http
+    timeout: 5s
+    http:
+      valid_status_codes: [200]  # Defaults to 2xx
+      method: GET
+      headers:
+      no_follow_redirects: false
+      fail_if_ssl: false
+      fail_if_not_ssl: false
+      fail_if_not_matches_regexp:
+      - "appName\":\".*\",\"appVersion\":\".*\",\"appRevision\":\".*\""
+  taulia_healthcheck:
+    prober: taulia
+    timeout: 5s
+    http:
+      valid_status_codes: [200]  # Defaults to 2xx
+      method: GET
+      headers:
+      no_follow_redirects: false
+      fail_if_ssl: false
+      fail_if_not_ssl: false
+      fail_if_not_matches_regexp:
+      - "appName\":\".*\",\"appVersion\":\".*\",\"appRevision\":\".*\""
