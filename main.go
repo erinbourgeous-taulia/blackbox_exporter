@@ -51,11 +51,11 @@ var (
 	timeoutOffset = kingpin.Flag("timeout-offset", "Offset to subtract from timeout in seconds.").Default("0.5").Float64()
 
 	Probers = map[string]prober.ProbeFn{
-		"http": prober.ProbeHTTP,
-		"tcp":  prober.ProbeTCP,
-		"icmp": prober.ProbeICMP,
-		"dns":  prober.ProbeDNS,
-		"taulia":  prober.ProbeTaulia,
+		"http":   prober.ProbeHTTP,
+		"tcp":    prober.ProbeTCP,
+		"icmp":   prober.ProbeICMP,
+		"dns":    prober.ProbeDNS,
+		"taulia": prober.ProbeTaulia,
 	}
 )
 

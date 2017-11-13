@@ -39,8 +39,8 @@ import (
 
 func parseHealthCheckResponse(reader io.Reader, httpConfig config.HTTPProbe, logger log.Logger) map[string]string {
 	var response map[string]string
-	body, err := ioutil.ReadAll(reader)
-	err = json.Unmarshal(body, &response)
+	body, _ := ioutil.ReadAll(reader)
+	err := json.Unmarshal(body, &response)
 	if err != nil {
 		level.Error(logger).Log("msg", "Error decoding HTTP body", "err", err)
 		return response
